@@ -2,15 +2,15 @@
   <div class="home">
     <section class="hero">
       <div class="container hero-content">
-        <p class="kicker">Solidarite, Inclusion et Partage</p>
+        <p class="kicker">Solidarité, Inclusion et Partage</p>
         <h1>Ensemble chaque pas compte</h1>
         <p>
           Des evènements sportifs et culturels inclusifs, ouverts a toutes et
           tous.
         </p>
         <div class="hero-actions">
-          <router-link to="/evenements" class="btn btn-primary">
-            Voir les evènements
+          <router-link to="/notre-premier-defi" class="btn btn-primary">
+            Notre premier défi !
           </router-link>
           <router-link to="/association" class="btn btn-secondary">
             Decouvrir l'association
@@ -23,7 +23,7 @@
       <div class="container">
         <h2>Notre mission</h2>
         <p class="subtitle">
-          Rendre acessible et partager le sport et la culture a tous
+          Rendre acessible le sport et la culture a tous
         </p>
         <div class="features">
           <article>
@@ -41,7 +41,7 @@
               </svg>
             </div>
             <h3>Inclusion</h3>
-            <p>Creer des rencontres sans difference.</p>
+            <p>Créer des rencontres sans difference.</p>
           </article>
           <article>
             <div class="feature-icon feature-icon--navy" aria-hidden="true">
@@ -58,7 +58,7 @@
               </svg>
             </div>
             <h3>Partage</h3>
-            <p>Vivre des emotions ensemble.</p>
+            <p>Vivre des émotions ensemble.</p>
           </article>
           <article>
             <div class="feature-icon feature-icon--navy feature-icon--access">
@@ -72,7 +72,7 @@
               />
             </div>
             <h3>Accessibilité</h3>
-            <p>Des evenements accessibles a tous.</p>
+            <p>Des évenements accessibles a tous.</p>
           </article>
         </div>
       </div>
@@ -81,39 +81,39 @@
     <section class="events">
       <div class="container">
         <div class="events-title">
-          <h2>Nos prochains evenements</h2>
+          <h2>Nos prochains évenements</h2>
           <router-link to="/evenements">Voir tout le calendrier</router-link>
-        </div>
+        </div>    
         <div class="cards">
           <article class="card">
-            <span class="tag">Sport</span>
-            <h3>Et si on essayait le Paratennis !</h3>
-            <img
-              class="card-image"
-              src="/IMG_5662.png"
-              alt="Paratennis"
-            />
-            <p>13 mars 2026 - Meyzieu Tennis</p>
-          </article>
-          <article class="card">
-            <span class="tag">Culture</span>
+            <span class="tag">Caritatif</span>
             <h3>Soirée caritative au Loft Uzès</h3>
             <img
               class="card-image"
-              src="/PHOTO-2026-03-21-13-22-07.png"
+              src="/Les205AuLoft.png"
               alt="Paratennis"
             />
             <p>21 mars 2026 - Discothèque le Loft, Saint Quentin la poterie</p>
           </article>
           <article class="card">
             <span class="tag">Sport</span>
-            <h3>Tombola - Tournoi Rugby - US Meyzieu / SC Couches</h3>
+            <h3>Et si on essayait le Paratennis !</h3>
             <img
               class="card-image"
-              src="/IMG_24A3AFBFEA6B-1.png"
+              src="/Paratennis.png"
               alt="Paratennis"
             />
-            <p>18 janvier - Stade des Servizières, Meyzieu</p>      
+            <p>13 mars 2026 - Meyzieu Tennis</p>
+          </article>
+          <article class="card">
+            <span class="tag">Culture</span>
+            <h3>Loto</h3>
+            <img
+              class="card-image"
+              src="/Loto.jpg"
+              alt="Loto"
+            />
+            <p>8 février 2026 - Meyzieu Espace Jean Poperen</p>
           </article>
         </div>
       </div>
@@ -121,29 +121,20 @@
 
     <section class="stats">
       <div class="container stats-grid">
-        <div><strong>6</strong><span>Evenements organises</span></div>
-        <div><strong>100</strong><span>Participants</span></div>
-        <div><strong>9</strong><span>Benevoles engages</span></div>
+        <div><strong>6</strong><span>Evènements organisés</span></div>
+        <div><strong>+ 200</strong><span>Personnes sensibilisés</span></div>
+        <div><strong>9</strong><span>Bénévoles engagés dans l'aventure</span></div>
         <div><strong>2</strong><span>Villes partenaires</span></div>
       </div>
     </section>
 
     <section class="testimonials">
       <div class="container">
-        <h2>Leurs mots nous touchent</h2>
+        <h2>Leurs mots nous touchent</h2> 
         <div class="quotes">
-          <blockquote>
-            Une experience qui change le regard sur le handicap.
-            <cite>Marie L.</cite>
-          </blockquote>
-          <blockquote>
-            Des moments de partage exceptionnels.
-            <cite>Thomas R.</cite>
-          </blockquote>
-          <blockquote>
-            Ma fille s'est fait tellement d'amis.
-            <cite>Sophie M.</cite>
-          </blockquote>
+          <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMeyzieuRugby%2Fposts%2Fpfbid0GLiAdQFG7efyarR37NL3kVLvU2Jddvr3BYtiNc9L7FeYCmedyo7Wo2rGKYvu8NxWl&show_text=true&width=500" width="500" height="727" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>          
+          <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fceline.berthet.52%2Fposts%2Fpfbid02q8peuHCswJzsFqTna7nWUL3PxF94tqUaUDaruDVQkwGNbadS45wrJmjmVTsAY1bEl&show_text=true&width=500" width="500" height="169" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02BTXZYfKVRQ8CYWJ2eKaZqkCvvrE2TJm2TvG9tBy2ocJUpDfDtWLnL4h5vPKEoLbol%26id%3D61565441130429&show_text=true&width=500" width="500" height="628" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
       </div>
     </section>
