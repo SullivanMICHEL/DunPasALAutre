@@ -420,7 +420,7 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "token": GPS_TOKEN,
+          "X-GPS-Token": GPS_TOKEN,
         },
         body: JSON.stringify({
           lat,
