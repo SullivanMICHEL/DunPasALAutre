@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "firebase": "^12.11.0",
+    "@supabase/supabase-js": "^2.101.1",
     "leaflet": "^1.9.4",
     "vue": "^3.4.38",
     "vue-router": "^4.6.4"
