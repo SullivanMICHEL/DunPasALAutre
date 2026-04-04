@@ -23,9 +23,6 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { createClient } from "@supabase/supabase-js";
 
-// ─── Clé publique "anon" uniquement — lecture seule, sans danger ───
-// Remplace ces deux valeurs par celles de ton projet Supabase
-// (Supabase > Settings > API)
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 

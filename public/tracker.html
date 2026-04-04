@@ -4,259 +4,271 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tracker — D'un Pas à l'autre</title>
+
+  <!-- Mêmes polices que le site principal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+
   <style>
+    /* ── Tokens identiques au site Vue (src/style.css) ── */
     :root {
-      --red:    #e63946;
-      --red-dk: #c1121f;
-      --navy:   #0d2c80;
-      --dark:   #0a0f1e;
-      --card:   #111827;
-      --border: rgba(255,255,255,0.08);
-      --muted:  rgba(255,255,255,0.4);
-      --green:  #22c55e;
-      --amber:  #f59e0b;
+      --blue:        #0d2c80;
+      --blue-dark:   #081d58;
+      --red:         #e93445;
+      --red-dark:    #c1121f;
+      --bg-page:     #f6f8fc;
+      --bg-white:    #ffffff;
+      --bg-light:    #f1f5f9;
+      --bg-subtle:   #eef2f9;
+      --text:        #14213d;
+      --text-muted:  #6b7280;
+      --text-soft:   #334155;
+      --border:      #e2e8f0;
+      --font-heading:'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-body:   'DM Sans', system-ui, sans-serif;
+      --radius-sm:   6px;
+      --radius-md:   10px;
+      --radius-lg:   14px;
+      --radius-pill: 999px;
+      --shadow-card: 0 10px 30px rgba(4, 17, 57, 0.06);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'DM Mono', monospace;
-      background: var(--dark);
-      color: white;
+      font-family: var(--font-body);
+      background: var(--bg-page);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      /* grille subtile en fond */
+      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(13,44,128,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,44,128,.04) 1px, transparent 1px);
       background-size: 40px 40px;
     }
 
     /* ── En-tête ── */
-    .header {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-    .header-tag {
+    .tracker-header { text-align: center; margin-bottom: 28px; }
+
+    .kicker {
       display: inline-block;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .15em;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--red);
       border: 1px solid var(--red);
-      padding: 4px 10px;
-      border-radius: 4px;
-      margin-bottom: 16px;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 10px;
     }
-    .header h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-    }
-    .header h1 span { color: var(--red); }
 
-    /* ── Carte principale ── */
+    .tracker-header h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 800;
+      color: var(--blue-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .tracker-header h1 span { color: var(--red); }
+
+    /* ── Carte ── */
     .card {
-      background: var(--card);
+      background: var(--bg-white);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px;
+      border-radius: var(--radius-lg);
+      padding: 32px;
       width: 100%;
       max-width: 420px;
+      box-shadow: var(--shadow-card);
       position: relative;
       overflow: hidden;
+      transition: transform .12s;
     }
-    /* accent décoratif */
+
     .card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--red), var(--navy));
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--blue));
     }
 
-    /* ── Écran de login ── */
-    #screen-login { display: flex; flex-direction: column; gap: 20px; }
+    /* ── Login ── */
+    #screen-login { display: flex; flex-direction: column; gap: 18px; }
 
     .field label {
       display: block;
-      font-size: 10px;
-      letter-spacing: .12em;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
+      color: var(--text-muted);
+      margin-bottom: 7px;
     }
+
     .field input {
       width: 100%;
-      background: rgba(255,255,255,0.05);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 13px 16px;
-      color: white;
-      font-family: 'DM Mono', monospace;
-      font-size: 14px;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
       outline: none;
       transition: border-color .2s;
     }
-    .field input:focus { border-color: var(--red); }
-    .field input::placeholder { color: var(--muted); }
+
+    .field input:focus   { border-color: var(--blue); }
+    .field input::placeholder { color: var(--text-muted); }
 
     .btn {
       width: 100%;
-      padding: 14px;
+      padding: 13px;
       background: var(--red);
-      color: white;
+      color: var(--bg-white);
       border: none;
-      border-radius: 8px;
-      font-family: 'Syne', sans-serif;
-      font-size: 14px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
       font-weight: 700;
-      letter-spacing: .05em;
       cursor: pointer;
-      transition: background .2s, transform .1s;
+      transition: background .15s, transform .1s;
     }
-    .btn:hover  { background: var(--red-dk); }
+
+    .btn:hover  { background: var(--red-dark); }
     .btn:active { transform: scale(.98); }
     .btn:disabled { opacity: .5; cursor: not-allowed; }
 
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .btn-outline:hover { border-color: var(--red); color: var(--red); }
+
     .error-msg {
-      font-size: 12px;
-      color: #f87171;
+      font-size: 0.85rem;
+      color: var(--red-dark);
       text-align: center;
       display: none;
       padding: 10px;
-      background: rgba(239,68,68,.1);
-      border-radius: 6px;
-      border: 1px solid rgba(239,68,68,.2);
+      background: #fff0f1;
+      border-radius: var(--radius-sm);
+      border: 1px solid #ffd5d8;
     }
 
-    /* ── Écran tracker ── */
-    #screen-tracker { display: none; flex-direction: column; gap: 24px; }
+    /* ── Tracker ── */
+    #screen-tracker { display: none; flex-direction: column; gap: 20px; }
 
     .status-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
     }
+
     .status-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 16px;
+      font-family: var(--font-heading);
+      font-size: 1rem;
       font-weight: 700;
+      color: var(--blue-dark);
     }
+
     .badge {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
       border: 1px solid;
     }
-    .badge.active   { color: var(--green); border-color: rgba(34,197,94,.3); background: rgba(34,197,94,.08); }
-    .badge.inactive { color: var(--muted); border-color: var(--border); }
-    .badge.error    { color: #f87171;      border-color: rgba(248,113,113,.3); background: rgba(248,113,113,.08); }
 
-    /* Point clignotant */
+    .badge.active   { color: #15803d; border-color: #bbf7d0; background: #f0fdf4; }
+    .badge.inactive { color: var(--text-muted); border-color: var(--border); background: var(--bg-light); }
+    .badge.error    { color: var(--red-dark); border-color: #ffd5d8; background: #fff0f1; }
+
     .dot-live {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--green);
+      background: #16a34a;
       animation: pulse 1.5s ease-in-out infinite;
     }
+
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50%       { opacity: .4; transform: scale(.7); }
     }
 
-    /* Grille de stats */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
     .stat-box {
-      background: rgba(255,255,255,0.04);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-    }
-    .stat-box .stat-label {
-      font-size: 9px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .stat-box .stat-value {
-      font-size: 14px;
-      font-weight: 500;
-      color: white;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .stat-box .stat-value.big {
-      font-family: 'Syne', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
+      border-radius: var(--radius-sm);
+      padding: 12px;
     }
 
-    /* Barre d'activité */
+    .stat-label {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .stat-value { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+    .stat-value.big {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+
     .activity-log {
-      background: rgba(255,255,255,0.03);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-      max-height: 130px;
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      max-height: 120px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
-    .activity-log::-webkit-scrollbar { width: 4px; }
-    .activity-log::-webkit-scrollbar-track { background: transparent; }
-    .activity-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-    .log-line {
-      display: flex;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--muted);
-      align-items: flex-start;
-    }
-    .log-line .log-time { color: var(--red); flex-shrink: 0; }
-    .log-line.success .log-msg { color: rgba(34,197,94,.9); }
-    .log-line.warn    .log-msg { color: var(--amber); }
-    .log-line.err     .log-msg { color: #f87171; }
 
-    /* Bouton stop */
-    .btn-stop {
-      background: transparent;
-      border: 1px solid rgba(239,68,68,.3);
-      color: #f87171;
-    }
-    .btn-stop:hover { background: rgba(239,68,68,.08); border-color: #f87171; }
+    .activity-log::-webkit-scrollbar { width: 4px; }
+    .activity-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .log-line { display: flex; gap: 8px; font-size: 0.78rem; color: var(--text-muted); }
+    .log-time  { color: var(--blue); flex-shrink: 0; font-weight: 500; }
+    .log-line.success .log-msg { color: #15803d; }
+    .log-line.warn    .log-msg { color: #b45309; }
+    .log-line.err     .log-msg { color: var(--red-dark); }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <div class="header-tag">Rallye 205 Trophée</div>
+  <div class="tracker-header">
+    <div class="kicker">Rallye 205 Trophée</div>
     <h1>Tracker <span>équipage</span></h1>
   </div>
 
   <div class="card">
 
-    <!-- ── Écran login ── -->
     <div id="screen-login">
       <div class="field">
         <label>Mot de passe équipage</label>
@@ -264,10 +276,9 @@
                onkeydown="if(event.key==='Enter') login()">
       </div>
       <div class="error-msg" id="error-msg">Mot de passe incorrect</div>
-      <button class="btn" id="btn-login" onclick="login()">Activer le tracking</button>
+      <button class="btn" onclick="login()">Activer le tracking</button>
     </div>
 
-    <!-- ── Écran tracker ── -->
     <div id="screen-tracker">
 
       <div class="status-header">
@@ -299,145 +310,90 @@
 
       <div class="activity-log" id="activity-log">
         <div class="log-line">
-          <span class="log-time">--:--</span>
-          <span class="log-msg">En attente de signal GPS...</span>
+          <span class="log-time">--:--:--</span>
+          <span class="log-msg">En attente du signal GPS...</span>
         </div>
       </div>
 
-      <button class="btn btn-stop" onclick="stopTracking()">Arrêter le tracking</button>
+      <button class="btn btn-outline" onclick="stopTracking()">Arrêter le tracking</button>
 
     </div>
   </div>
 
 <script>
-  // URL de ton Cloudflare Worker
-  const WORKER_URL = "https://worker-tracker-205trophee.sullivan-michel.workers.dev/position";
-
-  // Mot de passe équipage (côté client, pour bloquer l'interface)
-  // Le vrai contrôle de sécurité se fait via GPS_TOKEN dans le Worker
-  const APP_PASSWORD = "rallye205";
-
-  // Token envoyé au Worker (doit correspondre à GPS_TOKEN dans Cloudflare)
-  const GPS_TOKEN = "Alice205";
-
-  // Intervalle d'envoi en secondes (30s recommandé pendant le rallye)
+  const WORKER_URL        = "https://worker-tracker-205trophee.sullivan-michel.workers.dev/position";
+  const APP_PASSWORD      = "rallye205";
+  const GPS_TOKEN         = "REMPLACE_PAR_TON_TOKEN_SECRET";
   const SEND_INTERVAL_SEC = 30;
 
-  // ─────────────────────────────────────────────────────────────────
+  let watchId = null, sendTimer = null, lastPos = null, sendCount = 0;
 
-  let watchId   = null;
-  let sendCount = 0;
-  let lastPos   = null;
-  let sendTimer = null;
-
-  // Auto-login si déjà authentifié
   if (sessionStorage.getItem("trackerAuth") === "ok") showTracker();
 
   function login() {
     const pwd = document.getElementById("password").value;
-    const btn = document.getElementById("btn-login");
     const err = document.getElementById("error-msg");
-
     if (pwd === APP_PASSWORD) {
       sessionStorage.setItem("trackerAuth", "ok");
       err.style.display = "none";
       showTracker();
     } else {
       err.style.display = "block";
-      btn.style.animation = "none";
-      // petite vibration visuelle
-      document.querySelector(".card").style.transform = "translateX(-4px)";
-      setTimeout(() => document.querySelector(".card").style.transform = "", 120);
+      const card = document.querySelector(".card");
+      card.style.transform = "translateX(-5px)";
+      setTimeout(() => card.style.transform = "", 120);
     }
   }
 
   function showTracker() {
-    document.getElementById("screen-login").style.display  = "none";
+    document.getElementById("screen-login").style.display   = "none";
     document.getElementById("screen-tracker").style.display = "flex";
     startTracking();
   }
 
   function startTracking() {
     if (!navigator.geolocation) {
-      setStatus("error", "GPS non supporté");
-      addLog("err", "Ce navigateur ne supporte pas la géolocalisation");
+      addLog("err", "Géolocalisation non supportée");
+      setStatus("error", "Non supporté");
       return;
     }
-
     addLog("", "Acquisition du signal GPS...");
-
     watchId = navigator.geolocation.watchPosition(
-      (pos) => {
-        lastPos = pos;
-        updateStats(pos);
-        setStatus("active", "En ligne");
-      },
+      (pos) => { lastPos = pos; updateStats(pos); setStatus("active", "En ligne"); },
       (err) => {
-        const msgs = {
-          1: "Permission refusée — autorise la localisation dans le navigateur",
-          2: "Signal GPS indisponible",
-          3: "Délai d'attente dépassé",
-        };
+        const msgs = { 1: "Permission refusée", 2: "Signal indisponible", 3: "Délai dépassé" };
         addLog("err", msgs[err.code] || "Erreur GPS inconnue");
         setStatus("error", "Erreur GPS");
       },
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 }
     );
-
-    // Envoi périodique
-    sendTimer = setInterval(() => {
-      if (lastPos) sendPosition(lastPos);
-    }, SEND_INTERVAL_SEC * 1000);
-
-    // Premier envoi dès que la position est connue
-    navigator.geolocation.getCurrentPosition(
-      (pos) => { lastPos = pos; sendPosition(pos); },
-      () => {}
-    );
+    sendTimer = setInterval(() => { if (lastPos) sendPosition(lastPos); }, SEND_INTERVAL_SEC * 1000);
+    navigator.geolocation.getCurrentPosition((pos) => { lastPos = pos; sendPosition(pos); }, () => {});
   }
 
   function updateStats(pos) {
     document.getElementById("stat-lat").textContent = pos.coords.latitude.toFixed(5);
     document.getElementById("stat-lng").textContent = pos.coords.longitude.toFixed(5);
-    document.getElementById("stat-acc").textContent =
-      pos.coords.accuracy ? Math.round(pos.coords.accuracy) + " m" : "—";
+    document.getElementById("stat-acc").textContent = pos.coords.accuracy ? Math.round(pos.coords.accuracy) + " m" : "—";
   }
 
   async function sendPosition(pos) {
     const { latitude: lat, longitude: lng, accuracy, speed } = pos.coords;
-
-    // Récupère batterie si disponible (API Battery, pas tous les navigateurs)
     let battery = null;
-    try {
-      if (navigator.getBattery) {
-        const b = await navigator.getBattery();
-        battery = Math.round(b.level * 100);
-      }
-    } catch (_) {}
-
+    try { if (navigator.getBattery) { const b = await navigator.getBattery(); battery = Math.round(b.level * 100); } } catch (_) {}
     try {
       const res = await fetch(WORKER_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-GPS-Token": GPS_TOKEN,
-        },
-        body: JSON.stringify({
-          lat,
-          lng,
-          accuracy: accuracy ? Math.round(accuracy) : null,
-          speed: speed ? speed.toFixed(1) : null,
-          battery,
-        }),
+        headers: { "Content-Type": "application/json", "X-GPS-Token": GPS_TOKEN },
+        body: JSON.stringify({ lat, lng, accuracy: accuracy ? Math.round(accuracy) : null, speed: speed ? +speed.toFixed(1) : null, battery }),
       });
-
       if (res.ok) {
         sendCount++;
         document.getElementById("stat-count").textContent = sendCount;
-        addLog("success", `Position envoyée — ${lat.toFixed(4)}, ${lng.toFixed(4)}`);
+        addLog("success", `Envoyé — ${lat.toFixed(4)}, ${lng.toFixed(4)}`);
         setStatus("active", "En ligne");
       } else {
-        addLog("warn", `Erreur serveur (${res.status}) — nouvelle tentative dans ${SEND_INTERVAL_SEC}s`);
+        addLog("warn", `Erreur serveur (${res.status})`);
         setStatus("error", "Erreur envoi");
       }
     } catch (_) {
@@ -452,15 +408,13 @@
     sessionStorage.removeItem("trackerAuth");
     addLog("warn", "Tracking arrêté");
     setStatus("inactive", "Arrêté");
-    document.querySelector(".btn-stop").disabled = true;
+    document.querySelector(".btn-outline").disabled = true;
   }
 
   function setStatus(type, text) {
-    const badge = document.getElementById("status-badge");
-    const dot   = document.getElementById("dot-live");
-    badge.className = "badge " + type;
+    document.getElementById("status-badge").className  = "badge " + type;
     document.getElementById("status-text").textContent = text;
-    dot.style.display = type === "active" ? "block" : "none";
+    document.getElementById("dot-live").style.display  = type === "active" ? "block" : "none";
   }
 
   function addLog(type, msg) {
@@ -473,13 +427,8 @@
     log.scrollTop = log.scrollHeight;
   }
 
-  // Empêche l'écran de se mettre en veille (API Wake Lock)
   async function keepAwake() {
-    try {
-      if ("wakeLock" in navigator) {
-        await navigator.wakeLock.request("screen");
-      }
-    } catch (_) {}
+    try { if ("wakeLock" in navigator) await navigator.wakeLock.request("screen"); } catch (_) {}
   }
   keepAwake();
 </script>
