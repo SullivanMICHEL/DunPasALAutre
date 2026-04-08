@@ -53,7 +53,22 @@
     }
 
     /* ── En-tête ── */
-    .tracker-header { text-align: center; margin-bottom: 28px; }
+    .tracker-header { text-align: center; margin-bottom: 28px; position: relative; }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 5px 14px;
+      transition: border-color .2s, color .2s;
+    }
+    .back-btn:hover { border-color: var(--blue); color: var(--blue); }
 
     .kicker {
       display: inline-block;
@@ -263,6 +278,7 @@
 <body>
 
   <div class="tracker-header">
+    <a href="/" class="back-btn">← Retour au site</a>
     <div class="kicker">Rallye 205 Trophée</div>
     <h1>Tracker <span>équipage</span></h1>
   </div>

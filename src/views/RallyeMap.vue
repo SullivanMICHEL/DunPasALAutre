@@ -93,8 +93,18 @@ export default {
         { name: "Tanger Med",  coords: [35.8950, -5.5030] },
       ];
 
+      const waypointIcon = L.divIcon({
+        className: "",
+        html: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="6" fill="#2563eb" stroke="#ffffff" stroke-width="2.5"/>
+        </svg>`,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -14],
+      });
+
       const stageCoords = stages.map((s) => {
-        L.marker(s.coords).addTo(this.map).bindPopup(s.name);
+        L.marker(s.coords, { icon: waypointIcon }).addTo(this.map).bindPopup(`<strong>${s.name}</strong>`);
         return s.coords;
       });
 
