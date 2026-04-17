@@ -27,6 +27,12 @@ const routes = [
     meta: { title: "L'association" },
   },
   {
+    path: "/sponsors",
+    name: "sponsors",
+    component: () => import("../views/SponsorsView.vue"),
+    meta: { title: "Nos sponsors" },
+  },
+  {
     path: "/nous-aider",
     name: "nous-aider",
     component: () => import("../views/NousAiderView.vue"),
