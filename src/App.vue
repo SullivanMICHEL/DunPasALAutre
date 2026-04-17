@@ -39,6 +39,7 @@
             </svg>
           </router-link>
           <router-link to="/association" @click="menuOpen = false">L'association</router-link>
+          <router-link to="/sponsors" @click="menuOpen = false">Sponsors</router-link>
           <router-link to="/nous-aider" @click="menuOpen = false">Nous aider</router-link>
           <router-link to="/contact" @click="menuOpen = false">Contact</router-link>
         </nav>
