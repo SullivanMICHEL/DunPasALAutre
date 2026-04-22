@@ -74,6 +74,35 @@
       </div>
     </section>
 
+    <!-- ── Petites mains ── -->
+    <!-- <section class="merci-section">
+      <div class="container">
+        <span class="section-tag center">Ils nous ont aidés</span>
+        <h2 class="merci-title">Nos petites mains</h2>
+        <p class="merci-subtitle">
+          Derrière chaque avancée depuis la création de cette association, il y a des personnes qui ont donné de leur temps,
+          de leur énergie et de leur cœur. Et pour toutes ces personnes là nous tenons a leur dire ...
+        </p>
+        <div class="word-cloud">
+          <span
+            v-for="(prenom, i) in prenoms.slice(0, 15)"
+            :key="prenom"
+            class="prenom-tag"
+            :style="prenomStyle(i)"
+          >{{ prenom }}</span>
+
+          <div class="merci-center">Merci !</div>
+
+          <span
+            v-for="(prenom, i) in prenoms.slice(15)"
+            :key="prenom"
+            class="prenom-tag"
+            :style="prenomStyle(i + 15)"
+          >{{ prenom }}</span>
+        </div>
+      </div>
+    </section> -->
+
     <!-- ── Rejoindre ── -->
     <section class="join-section">
       <div class="container join-inner">
@@ -124,12 +153,12 @@ export default {
           site: "https://menuiserieguarch.fr",
         },
         {
-          nom: "DEKRA",
+          nom: "DEKRA Automotive",
           localisation: "France",
           description: "Leader européen de l'inspection, certification et contrôle technique automobile et industriel.",
-          contact: "https://www.dekra.fr",
+          contact: "https://www.dekra-norisko.fr/a-propos-de-nous/le-groupe-dekra-automotive,id-1148",
           type_contact: "site",
-          site: "https://www.dekra.fr",
+          site: "https://www.dekra-norisko.fr/a-propos-de-nous/le-groupe-dekra-automotive,id-1148",
         },
         {
           nom: "Fabemi",
@@ -149,7 +178,7 @@ export default {
         },
         {
           nom: "L'Appart Fitness",
-          localisation: "France",
+          localisation: "Saint Romain de Jalionas (38460) - Pusignan (69330)",
           description: "Réseau de salles de sport ouvertes 7j/7 de 6h à 23h. Musculation, cardio, cours collectifs et coaching personnalisé.",
           contact: "https://www.lappartfitness.com",
           type_contact: "site",
@@ -291,10 +320,237 @@ export default {
           type_contact: "site",
           site: "https://xdp-deco.fr",
         },
+        {
+          nom: "SAS Belmas Daumas",
+          localisation: "ZI de Gaujac, 1 Rue Gustave Eiffel, 11200 Lézignan-Corbières",
+          description: "Établissements Belmas, famille de garagistes depuis 1929. Agent Peugeot proposant vente de véhicules neufs et d'occasion, mécanique, carrosserie et dépannage 24h/24.",
+          contact: "https://www.peugeotproximity.fr/garage/sas-belmas-daumas",
+          type_contact: "site",
+          site: "https://www.peugeotproximity.fr/garage/sas-belmas-daumas",
+        },
+        {
+          nom: "SARLU Aunis Utilitaires",
+          localisation: "107 Bis Rue de la Juillerie, 17170 Ferrières",
+          description: "Garage Peugeot. Entretien et réparation toutes marques, vente de véhicules neufs et d'occasion, location.",
+          contact: "https://ferrieresautomobiles.fr",
+          type_contact: "site",
+          site: "https://ferrieresautomobiles.fr",
+        },
+        {
+          nom: "PG Marinelli",
+          localisation: "D1084 Pont de Chazey, 01800 Villieu-Loyes-Mollon",
+          description: "Concessionnaire automobile depuis plus de 40 ans. Agent Peugeot et Volkswagen, vente de véhicules neufs et d'occasion, atelier mécanique et carrosserie-peinture.",
+          contact: "https://www.peugeotproximity.fr/garage/pg-marinelli",
+          type_contact: "site",
+          site: "https://www.peugeotproximity.fr/garage/pg-marinelli",
+        },
+        {
+          nom: "SARL Mickaël Berera",
+          localisation: "5 Route de Ternay, 69360 Communay",
+          description: "Garage agent Peugeot et Citroën. Entretien et réparation toutes marques, mécanique, carrosserie, vente de véhicules d'occasion.",
+          contact: "https://www.peugeotproximity.fr/garage/berera-mickael-sarl",
+          type_contact: "site",
+          site: "https://www.peugeotproximity.fr/garage/berera-mickael-sarl",
+        },
+        {
+          nom: "SARL Garage des 4 Chemins",
+          localisation: "588 Route de Balan, 01120 Dagneux",
+          description: "Agent Peugeot intervenant sur toutes marques. Mécanique, carrosserie, peinture, vente de véhicules neufs et d'occasion. Situé à quelques kilomètres de Meyzieu.",
+          contact: "https://concessions.peugeot.fr/balan",
+          type_contact: "site",
+          site: "https://concessions.peugeot.fr/balan",
+        },
+        {
+          nom: "MECASPORT",
+          localisation: "198 Avenue des Cèdres, 38280 Villette-d'Anthon",
+          description: "Garage automobile agréé assurances, spécialisé dans l'entretien et la réparation de véhicules toutes marques.",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.mecasport38.fr",
+        },
+        {
+          nom: "SAS Vigne Automobiles",
+          localisation: "14 Avenue de Verdun, 69330 Meyzieu",
+          description: "Agent Renault et Dacia à Meyzieu. Vente de véhicules neufs et d'occasion, mécanique, carrosserie, peinture et agréé assurances.",
+          contact: "https://www.renault-vigne-automobiles-lpa.fr",
+          type_contact: "site",
+          site: "https://www.renault-vigne-automobiles-lpa.fr",
+        },
+        {
+          nom: "Jean de Paris — Intermarché",
+          localisation: "69330 Meyzieu",
+          description: "Supermarché Intermarché de Meyzieu. Grande surface alimentaire et non-alimentaire au service des habitants du territoire.",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.intermarche.com/magasin?utm_source=gmb",
+        },
+        {
+          nom: "SCE Sinotec",
+          localisation: "555 Rue Gustave Eiffel, 69330 Meyzieu",
+          description: "Spécialiste du mobilier et matériel événementiel depuis 22 ans. Chaises, tables, buffets, scènes, mobilier lumineux pour professionnels de l'événementiel et du CHR.",
+          contact: "https://www.sinotec.fr",
+          type_contact: "site",
+          site: "https://www.sinotec.fr",
+        },
+        {
+          nom: "Horus and Co",
+          localisation: "5 Avenue Lionel Terray, 69330 Meyzieu",
+          description: "Promoteur immobilier basé à Meyzieu.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+
+        {
+          nom: "CVU Services",
+          localisation: "Montaren-et-Saint-Médiers (30700)",
+          description: "Commerce de gros de fleurs et plantes. Fournisseur de végétaux pour professionnels, situé dans le Gard près d'Uzès.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+        {
+          nom: "LUGIS",
+          localisation: "6 Impasse Monge, 69330 Meyzieu",
+          description: "Entreprise de travaux de plâtrerie basée à Meyzieu. Intervient sur des chantiers de construction et rénovation pour particuliers et professionnels.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+        {
+          nom: "EGBS",
+          localisation: "6 Impasse Monge, 69330 Meyzieu",
+          description: "Entreprise générale du bâtiment à Meyzieu. Construction et rénovation tous corps d'état pour particuliers, professionnels et collectivités.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+        {
+          nom: "ORFIS",
+          localisation: "149 Bd de la Bataille de Stalingrad, 69100 Villeurbanne",
+          description: "Cabinet d'expertise comptable, d'audit et de conseil implanté dans la région lyonnaise depuis plus de 20 ans. Membre du groupe Advolis Orfis.",
+          contact: "https://advolis-orfis.com",
+          type_contact: "site",
+          site: "https://advolis-orfis.com",
+        },
+        {
+          nom: "Uzège Assur Conseil — Bernard Pascal Generali",
+          localisation: "Uzès (30700)",
+          description: "Courtier en assurance Generali sur le bassin d'Uzès. Accompagnement personnalisé pour particuliers et professionnels dans tous leurs besoins en assurance.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+        {
+          nom: "Pupil Optique",
+          localisation: "18 Boulevard Gambetta, 30700 Uzès",
+          description: "Opticien à Uzès proposant lunettes, lentilles et examens de vue.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+        {
+          nom: "Dolce Cuisines",
+          localisation: "Chemin du Laquet, 30360 Euzet",
+          description: "Cuisiniste artisanal dans le Gard. Conception et installation de cuisines sur mesure pour particuliers.",
+          contact: null,
+          type_contact: null,
+          site: null,
+        },
+        {
+          nom: "US Meyzieu Rugby",
+          localisation: "139 Rue de la République, 69330 Meyzieu",
+          description: "Club de rugby de Meyzieu évoluant en Fédérale 2. Toutes catégories de l'école de rugby aux seniors, partenaire sportif et associatif du territoire.",
+          contact: null,
+          type_contact: "site",
+          site: "https://usmeyzieurugby.ffr.fr",
+        },
+        {
+          nom: "DG Automobiles",
+          localisation: "118 Rue de la République, 69330 Meyzieu",
+          description: "Concessionnaire Peugeot, Citroën, DS et Ami à Meyzieu depuis plus de 20 ans. Vente de véhicules neufs et d'occasion toutes marques, mécanique, carrosserie, peinture et location.",
+          contact: "https://www.dgautomobiles.fr",
+          type_contact: "site",
+          site: "https://www.dgautomobiles.fr",
+        },
+        {
+          nom: "Auto-contrôle SALERNO",
+          localisation: "6 Av. du Dr Schweitzer, 69330 Meyzieu",
+          description: "Centre de contrôle technique automobile - Groupe Dekra-Norisko",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.dekra-norisko.fr/norisko/controle-technique/meyzieu,69330/6-avenue-du-docteur-schweitzer?S069V187&utm_source=google&utm_medium=mybusiness&utm_campaign=fiche_centre&utm_term=Meyzieu-Z.I&utm_content=S069V187",
+        },
+        {
+          nom: "DEKRA Contrôle Technique — Uzès",
+          localisation: "ZA Pont des Charrettes, 30700 Uzès",
+          description: "Centre de contrôle technique agréé DEKRA, situé dans la zone artisanale de Pont des Charrettes à Uzès. Contrôle technique toutes marques pour particuliers et professionnels.",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.dekra-norisko.fr/dekra/controle-technique/uzes,30700/pont-des-charrettes?S030D090",
+        },
+        {
+          nom: "Mairie de Jonage",
+          localisation: "69330 Jonage",
+          description: "Commune de Jonage, partenaire institutionnel de l'association D'un Pas à l'Autre. Soutien local à une initiative solidaire et inclusive portée par des habitants du territoire.",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.mairiedejonage.com",
+        },
+        {
+          nom: "MBA 06 - MALBERT & BERTHOUD AUTOMOBILES",
+          localisation: "Zone commerciale de la Paoute derrière BESSON, 30 Trav. de la Paoute, 06130 Grasse",
+          description: "Agent officiel Peugeot et Fiat à Grasse depuis plusieurs décennies. Vente de véhicules neufs et d'occasion toutes marques, entretien, réparation mécanique et carrosserie dans les Alpes-Maritimes.",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.mba06.fr",
+        },
+        {
+          nom: "COMBRAY AUTOMOBILES RINGUEDE",
+          localisation: "1 Rue de la Croix des Marains, 28120 Illiers-Combray",
+          description: "Entreprise familiale fondée en 1984. Agent Peugeot à Illiers-Combray en Eure-et-Loir, spécialisé dans la vente, la réparation mécanique, la carrosserie et la peinture toutes marques.",
+          contact: null,
+          type_contact: "site",
+          site: "https://concessions.peugeot.fr/illiers-combray/nous-contacter/info-utiles/",
+        },
+        {
+          nom: "Auto OUSTRIC",
+          localisation: "ZA De Bordevieille - 82500 Beaumont-de-Lomagne",
+          description: "Garage familial agent Peugeot et Citroën à Beaumont-de-Lomagne en Tarn-et-Garonne. Vente de véhicules neufs et d'occasion, entretien et réparation mécanique et carrosserie toutes marques, avec un second site Citroën à Sérignac.",
+          contact: null,
+          type_contact: "site",
+          site: "https://www.auto-oustric.com/peugeot.php",
+        },
+        {
+          nom: "Club de Tennis de Meyzieu",
+          localisation: "Parc des Servizières - 139 Rue de la République, 69330 Meyzieu",
+          description: "Club de tennis situé dans le parc sportif de Meyzieu. Ouvert aux débutants comme aux joueurs confirmés.",
+          contact: null,
+          type_contact: "site",
+          site: "https://tenup.fft.fr/club/50690590",
+        },
+        {
+          nom: "Garage Peugeot Léna",
+          localisation: "26 Rue Docteur Lavergne, 22400 Lamballe",
+          description: "Entreprise familiale fondée en 1912. Agent Peugeot à Lamballe en Bretagne, proposant la vente de véhicules neufs et d'occasion, l'entretien et la réparation toutes marques, ainsi qu'un service Spoticar.",
+          contact: null,
+          type_contact: "site",
+          site: "https://concessions.peugeot.fr/lena/?location=LAMBALLE%7C0",
+        },
       ],
 
       // Suivi des logos en erreur → fallback initiales
       logoFailed: {},
+
+      // Prénoms des petites mains
+      prenoms: [
+        "Fatima", "Pedro", "Carlos", "Cyril", "Claire", "Anne-Marie",
+        "Sabine", "Elias", "Nicolas", "Emmanuel", "Alice", "René",
+        "Christian", "Fabrice", "Sergio", "Jean-Michel", "Audrey",
+        "Hélène", "Frédérique", "Sandro", "Toni", "Anne-Sophie",
+        "Martin", "Michel", "Yohan", "Gisèle", "Aurélie", "Julien",
+        "Patrice", "Tiffany", "Anna", "Enzo", "Laëtitia"
+      ],
 
       // Palette de couleurs pour les avatars (coordonnée avec la charte)
       avatarPalette: [
@@ -316,6 +572,20 @@ export default {
   methods: {
     onLogoError(nom) {
       this.logoFailed = { ...this.logoFailed, [nom]: true };
+    },
+
+    prenomStyle(i) {
+      const palette = [
+        "#0d2c80", "#e93445", "#0f6e56", "#854f0b",
+        "#185fa5", "#993556", "#3b6d11", "#6b21a8",
+        "#0e7490", "#b45309", "#1d4ed8", "#be123c",
+      ];
+      const sizes   = ["0.85rem", "0.95rem", "1.05rem", "1.15rem", "1.3rem", "0.78rem"];
+      const weights = [400, 500, 600, 700];
+      const color  = palette[i % palette.length];
+      const size   = sizes[(i * 3 + 1) % sizes.length];
+      const weight = weights[(i * 7) % weights.length];
+      return { color, fontSize: size, fontWeight: weight };
     },
 
     initiales(nom) {
@@ -554,5 +824,70 @@ export default {
   .sponsors-grid { grid-template-columns: 1fr; }
   .hero-stats    { gap: 12px; }
   .hero-stat-sep { display: none; }
+}
+/* ── Petites mains ── */
+.merci-section {
+  padding: 80px 0 96px;
+  background: var(--bg-subtle);
+}
+.merci-title {
+  text-align: center;
+  color: var(--blue-dark);
+  margin-bottom: .5rem;
+}
+.merci-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  line-height: 1.65;
+}
+.word-cloud {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  min-height: 380px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 22px;
+  padding: 80px 60px;
+}
+.prenom-tag {
+  font-family: var(--font-heading);
+  letter-spacing: -.01em;
+  line-height: 1;
+  transition: transform .2s, opacity .2s;
+  cursor: default;
+  opacity: .85;
+}
+.prenom-tag:hover { transform: scale(1.18); opacity: 1; }
+.prenom-tag:nth-child(3n)   { transform: rotate(-2deg); }
+.prenom-tag:nth-child(3n+1) { transform: rotate(1.5deg); }
+.prenom-tag:nth-child(3n+2) { transform: rotate(-1deg); }
+.prenom-tag:nth-child(3n):hover   { transform: rotate(-2deg) scale(1.18); }
+.prenom-tag:nth-child(3n+1):hover { transform: rotate(1.5deg) scale(1.18); }
+.prenom-tag:nth-child(3n+2):hover { transform: rotate(-1deg) scale(1.18); }
+.merci-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--blue-dark);
+  text-align: center;
+  line-height: 1.2;
+  background: var(--bg-subtle);
+  padding: 10px 20px;
+  border-radius: var(--radius-lg);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (max-width: 600px) {
+  .word-cloud { padding: 100px 20px 60px; min-height: 400px; position: relative; min-height: 340px }
+  .merci-center { font-size: 1.3rem; white-space: normal; width: 160px; }
 }
 </style>

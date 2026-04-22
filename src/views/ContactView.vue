@@ -71,17 +71,23 @@
             </div>
           </a>
 
+          <a href="https://www.tiktok.com/@dun.pas.lautre" target="_blank" rel="noopener" class="coord-card">
+            <div class="coord-icon coord-icon--tiktok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="coord-label">TikTok</div>
+              <div class="coord-value">@dun.pas.lautre</div>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
 
     <!-- ── Formulaire ── -->
-    <!--
-      Formulaire de contact via Formspree (https://formspree.io).
-      1. Crée un compte sur formspree.io
-      2. Crée un nouveau formulaire → copie l'ID (ex: xpwzabcd)
-      3. Remplace YOUR_FORM_ID dans l'action ci-dessous
-    -->
     <section class="form-section">
       <div class="container form-container">
         <span class="section-tag center">Message direct</span>
@@ -144,7 +150,6 @@ import { ref } from 'vue'
 const submitted = ref(false)
 
 function onSubmit() {
-  // Formspree gère l'envoi — on désactive juste le bouton après soumission
   setTimeout(() => { submitted.value = true }, 100)
 }
 </script>
@@ -257,6 +262,7 @@ h2 {
 .coord-icon--facebook  { background: #e7f0fd; color: #1877f2; }
 .coord-icon--instagram { background: #fde8f0; color: #e1306c; }
 .coord-icon--youtube   { background: #fdecea; color: #ff0000; }
+.coord-icon--tiktok    { background: #f0f0f0; color: #000000; }
 
 .coord-label {
   font-family: var(--font-heading);
