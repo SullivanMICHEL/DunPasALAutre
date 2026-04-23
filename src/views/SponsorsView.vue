@@ -879,6 +879,5 @@ export default {
 }
 @media (max-width: 600px) {
   .word-cloud { padding: 50px 20px 60px; min-height: 400px; min-height: 340px }
-  .merci-center { font-size: 1.3rem; white-space: normal; width: 160px; }
 }
 </style>
