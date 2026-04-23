@@ -84,6 +84,8 @@
           de leur énergie et de leur cœur. Et pour toutes ces personnes là nous tenons a leur dire ...
         </p>
         <div class="merci-center">Merci !</div>
+        <!-- <h2 class="merci-title">Merci !</h2> -->
+
         <div class="word-cloud">
           <span
             v-for="(prenom, i) in prenoms.slice(0, 15)"
@@ -879,6 +881,5 @@ export default {
 }
 @media (max-width: 600px) {
   .word-cloud { padding: 50px 20px 60px; min-height: 400px; min-height: 340px }
-  .merci-center { font-size: 1.3rem; white-space: normal; width: 160px; }
 }
 </style>
