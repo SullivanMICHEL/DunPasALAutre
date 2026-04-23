@@ -75,7 +75,7 @@
     </section>
 
     <!-- ── Petites mains ── -->
-    <!-- <section class="merci-section">
+    <section class="merci-section">
       <div class="container">
         <span class="section-tag center">Ils nous ont aidés</span>
         <h2 class="merci-title">Nos petites mains</h2>
@@ -83,6 +83,7 @@
           Derrière chaque avancée depuis la création de cette association, il y a des personnes qui ont donné de leur temps,
           de leur énergie et de leur cœur. Et pour toutes ces personnes là nous tenons a leur dire ...
         </p>
+        <div class="merci-center">Merci !</div>
         <div class="word-cloud">
           <span
             v-for="(prenom, i) in prenoms.slice(0, 15)"
@@ -90,8 +91,6 @@
             class="prenom-tag"
             :style="prenomStyle(i)"
           >{{ prenom }}</span>
-
-          <div class="merci-center">Merci !</div>
 
           <span
             v-for="(prenom, i) in prenoms.slice(15)"
@@ -101,7 +100,7 @@
           >{{ prenom }}</span>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- ── Rejoindre ── -->
     <section class="join-section">
@@ -544,12 +543,13 @@ export default {
 
       // Prénoms des petites mains
       prenoms: [
-        "Fatima", "Pedro", "Carlos", "Cyril", "Claire", "Anne-Marie",
-        "Sabine", "Elias", "Nicolas", "Emmanuel", "Alice", "René",
-        "Christian", "Fabrice", "Sergio", "Jean-Michel", "Audrey",
-        "Hélène", "Frédérique", "Sandro", "Toni", "Anne-Sophie",
-        "Martin", "Michel", "Yohan", "Gisèle", "Aurélie", "Julien",
-        "Patrice", "Tiffany", "Anna", "Enzo", "Laëtitia"
+        "Anna", "Mauro", "Dario", "Hélène", "Christian", "Sabine", 
+        "Philippe", "Tanguy", "Bernard", "Julien", "Christophe", "Alexis",
+        "Jean-Mi", "Damien", "Loïc", "Fati", "René", "Sandro", "Anne-So",
+        "Toni", "Gisèle", "Enzo", "Laëtitia", "Pedro", "Carlos", "Cyril", 
+        "Claire", "Anne-Marie", "Elias", "Nicolas", "Emmanuel", "Alice",
+        "Fabrice", "Sergio", "Audrey", "Frédérique", "Martin", "Michel", 
+        "Yohan", "Aurélie", "Patrice", "Tiffany", 
       ],
 
       // Palette de couleurs pour les avatars (coordonnée avec la charte)
@@ -870,24 +870,15 @@ export default {
 .prenom-tag:nth-child(3n+1):hover { transform: rotate(1.5deg) scale(1.18); }
 .prenom-tag:nth-child(3n+2):hover { transform: rotate(-1deg) scale(1.18); }
 .merci-center {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
   color: var(--blue-dark);
   text-align: center;
   line-height: 1.2;
-  background: var(--bg-subtle);
-  padding: 10px 20px;
-  border-radius: var(--radius-lg);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 2;
 }
 @media (max-width: 600px) {
-  .word-cloud { padding: 100px 20px 60px; min-height: 400px; position: relative; min-height: 340px }
+  .word-cloud { padding: 50px 20px 60px; min-height: 400px; min-height: 340px }
   .merci-center { font-size: 1.3rem; white-space: normal; width: 160px; }
 }
 </style>
