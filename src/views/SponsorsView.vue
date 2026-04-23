@@ -84,8 +84,6 @@
           de leur énergie et de leur cœur. Et pour toutes ces personnes là nous tenons a leur dire ...
         </p>
         <div class="merci-center">Merci !</div>
-        <!-- <h2 class="merci-title">Merci !</h2> -->
-
         <div class="word-cloud">
           <span
             v-for="(prenom, i) in prenoms.slice(0, 15)"
