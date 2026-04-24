@@ -536,6 +536,38 @@ export default {
           type_contact: "site",
           site: "https://concessions.peugeot.fr/lena/?location=LAMBALLE%7C0",
         },
+        {
+          nom: "AD Carrosserie & Garage AD Expert ATS",
+          localisation: "15 Avenue Lionel Terray ZI, 69330 Meyzieu",
+          description: "Membre du réseau Carrosserie AD, la carrosserie ATS accueille les clients à Meyzieu depuis de nombreuses années pour de l'entretien, mécanique, carrosserie et peinture toutes marques.",
+          contact: "https://www.ad.fr/garage/ad-carrosserie-ats",
+          type_contact: "site",
+          site: "https://www.ad.fr/garage/ad-carrosserie-ats",
+        },
+        {
+          nom: "AD Carrosserie & Garage AD Expert 3B Auto",
+          localisation: "163 Avenue Gabriel Péri, 69120 Vaulx-en-Velin",
+          description: "Membre du réseau Carrosserie AD à Vaulx-en-Velin. Spécialisé dans la carrosserie, la peinture et la mécanique toutes marques, avec une prise en charge des sinistres assurance et des véhicules neufs et d'occasion.",
+          contact: "https://www.ad.fr/garage/ad-carrosserie-3b-auto",
+          type_contact: "site",
+          site: "https://www.ad.fr/garage/ad-carrosserie-3b-auto",
+        },
+        {
+          nom: "Tendance Poulet",
+          localisation: "2 Place Maréchal de Lattre de Tassigny, 38280 Janneyrias",
+          description: "Rôtisserie artisanale et traiteur à Janneyrias. Poulet fermier Label Rouge d'Ardèche, plats cuisinés faits maison, baguettes gourmandes, buddha bowls et desserts maison. Vente à emporter, livraison Uber Eats et Deliveroo.",
+          contact: "https://www.tendancepoulet.fr",
+          type_contact: "site",
+          site: "https://www.tendancepoulet.fr",
+        },
+        {
+          nom: "Restaurant Le Brasero",
+          localisation: "1 Rue Duquesne, 69330 Meyzieu",
+          description: "Restaurant familial français et italien à Meyzieu, tenu par la famille Rivoire depuis plus de 15 ans. Spécialités de viandes (bœuf limousin, côte de bœuf XXL), pizzas et pâtes maison, avec une salle de 100 couverts et une terrasse.",
+          contact: "https://www.lebrasero-restaurant-pizzeria.com",
+          type_contact: "site",
+          site: "https://www.lebrasero-restaurant-pizzeria.com",
+        },
       ],
 
       // Suivi des logos en erreur → fallback initiales
