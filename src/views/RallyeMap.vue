@@ -198,9 +198,12 @@ export default {
     },
 
     formatDate(isoString) {
-      return new Date(isoString).toLocaleTimeString("fr-FR", {
+      return new Date(isoString).toLocaleDateString("fr-FR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
         hour: "2-digit",
-        minute: "2-digit",
+        minute: "2-digit",        
       });
     },
   },
