@@ -581,7 +581,7 @@ export default {
         "Toni", "Gisèle", "Enzo", "Laëtitia", "Pedro", "Carlos", "Cyril", 
         "Claire", "Anne-Marie", "Elias", "Nicolas", "Emmanuel", "Alice",
         "Fabrice", "Sergio", "Audrey", "Frédérique", "Martin", "Michel", 
-        "Yohan", "Aurélie", "Patrice", "Tiffany", 
+        "Yohan", "Aurélie", "Patrice", "Tiffany", "Thibault", "Jade"
       ],
 
       // Palette de couleurs pour les avatars (coordonnée avec la charte)
