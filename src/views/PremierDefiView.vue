@@ -88,20 +88,42 @@
       </div>
     </section>
 
-    <section class="countdown">
+    <!-- Parcours + montage côte à côte -->
+    <section class="parcours-section">
       <div class="container">
-        <h2>Départ dans</h2>
-        <div class="countdown-grid">
-          <div class="time-box"><strong>{{ timeLeft.days }}</strong><span>Jours</span></div>
-          <div class="time-box"><strong>{{ timeLeft.hours }}</strong><span>Heures</span></div>
-          <div class="time-box"><strong>{{ timeLeft.minutes }}</strong><span>Minutes</span></div>
-          <div class="time-box"><strong>{{ timeLeft.seconds }}</strong><span>Secondes</span></div>
+        <span class="section-tag">205 Trophée — Édition 2026</span>
+        <h2 class="left-heading">Le parcours réalisé</h2>
+        <p class="section-lead">
+          <strong>5 611 km</strong> parcourus lors de l'édition 2026 du 205 Trophée,
+          de Lyon jusqu'au sud du Maroc et retour.
+          Neuf jours d'aventure, de rencontres et de souvenirs inoubliables.
+        </p>
+        <div class="parcours-duo">
+          <!-- Carte -->
+          <div class="parcours-map-wrapper">
+            <img
+              src="/parcours-205.png"
+              alt="Carte du parcours réalisé lors du 205 Trophée édition 2026"
+              class="parcours-map-img"
+            />
+            <div class="parcours-caption">📍 Trajet GPS réel — 205 Trophée 2026</div>
+          </div>
+          <!-- Montage de fin -->
+          <div class="parcours-video-wrapper">
+            <div class="video-featured-badge">🎬 Le résumé du raid — À voir à tout prix !</div>
+            <div class="youtube-player">
+              <iframe
+                src="https://www.youtube.com/embed/IT5uOXnMVhI?rel=0&modestbranding=1"
+                title="Montage — 205 Trophée 2026"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- Carte GPS temps réel -->
-    <RallyeMap />
 
     <!-- ── YouTube ── -->
     <section class="youtube-section">
@@ -117,103 +139,71 @@
             </p>
           </div>
           <a
-            href="https://www.youtube.com/@Dunpasalautre"
+            href="https://www.youtube.com/playlist?list=PLtlr6HlCg6ZezrLWETJYJTgj1INMFR-Sx"
             target="_blank"
             class="btn-youtube"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
               <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
-            Voir la chaîne complète
+            Voir la playlist complète
           </a>
         </div>
 
-        <!-- Lecteur 16:9 responsive — playlist uploads de la chaîne (toutes les vidéos, mises à jour automatiquement) -->
-        <div class="youtube-player">
-          <iframe
-            src="https://www.youtube.com/embed/Lz_dM16bMs8?list=UUFeOu92TusxZstcavNwhaCA&rel=0&modestbranding=1"
-            title="Vidéos D'un Pas à l'autre — Rallye 205 Trophée"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+        <!-- Mosaïque 9 vidéos -->
+        <div class="video-grid">
+          <a href="https://youtu.be/Lz_dM16bMs8" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/Lz_dM16bMs8/mqdefault.jpg" alt="Vidéo 1 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/kd0P9TUYqyk" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/kd0P9TUYqyk/mqdefault.jpg" alt="Vidéo 2 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/pcl5Fe7UFgE" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/pcl5Fe7UFgE/mqdefault.jpg" alt="Vidéo 3 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/94M7e3Tzq_I" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/94M7e3Tzq_I/mqdefault.jpg" alt="Vidéo 4 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/3L0WSlhEUww" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/3L0WSlhEUww/mqdefault.jpg" alt="Vidéo 5 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/nf1FO0uDu1Y" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/nf1FO0uDu1Y/mqdefault.jpg" alt="Vidéo 6 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/eS0JtjHTooQ" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/eS0JtjHTooQ/mqdefault.jpg" alt="Vidéo 7 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/KEzmwCySFhA" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/KEzmwCySFhA/mqdefault.jpg" alt="Vidéo 8 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+          <a href="https://youtu.be/aoDIzBPGOPg" target="_blank" class="video-thumb">
+            <img src="https://img.youtube.com/vi/aoDIzBPGOPg/mqdefault.jpg" alt="Vidéo 9 — 205 Trophée 2026">
+            <div class="video-thumb-overlay"><span>▶</span></div>
+          </a>
+        </div>
+
+        <!-- Image de remerciements sponsors -->
+        <div class="merci-sponsors">
+          <img src="/merci-sponsors.png" alt="Merci à tous nos sponsors — 205 Trophée 2026">
         </div>
 
       </div>
     </section>
 
-    <!-- ── HelloAsso — cagnotte ── -->
-    <section class="helloasso-section">
-      <div class="container">
-
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Nous soutenir</span>
-            <h2 class="left-heading">Faites un don</h2>
-            <p class="section-lead">
-              Chaque contribution nous aide à financer le raid, le matériel
-              et les collectes humanitaires au Maroc.
-            </p>
-          </div>
-        </div>
-
-        <div class="helloasso-wrapper">
-          <iframe
-            id="haWidget"
-            allowtransparency="true"
-            scrolling="auto"
-            src="https://www.helloasso.com/associations/d-un-pas-a-l-autre/formulaires/1/widget"
-            title="Formulaire de don — D'un Pas à l'autre"
-          ></iframe>
-        </div>
-
-      </div>
-    </section>
 
   </div>
 </template>
 
 <script>
-import RallyeMap from "./RallyeMap.vue";
-export default {
-  components: { RallyeMap },
-  data() {
-    return {
-      targetDate: new Date("2026-05-03T00:00:00"),
-      timeLeft: { days: 0, hours: 0, minutes: 0, seconds: 0 },
-      timer: null,
-    };
-  },
-  mounted() {
-    this.updateCountdown();
-    this.timer = setInterval(this.updateCountdown, 1000);
-    // Redimensionnement automatique HelloAsso
-    window.addEventListener("message", this.onHelloAssoMessage);
-  },
-  beforeUnmount() {
-    clearInterval(this.timer);
-    window.removeEventListener("message", this.onHelloAssoMessage);
-  },
-  methods: {
-    updateCountdown() {
-      const diff = this.targetDate - new Date();
-      if (diff <= 0) { clearInterval(this.timer); return; }
-      this.timeLeft = {
-        days:    Math.floor(diff / 86400000),
-        hours:   Math.floor((diff / 3600000) % 24),
-        minutes: Math.floor((diff / 60000) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      };
-    },
-    onHelloAssoMessage(e) {
-      if (!e.data?.height) return;
-      const el = document.getElementById("haWidget");
-      if (el && e.data.height > 0) {
-        el.style.height = e.data.height + "px";
-      }
-    },
-  },
-};
+export default {};
 </script>
 
 <style scoped>
@@ -281,12 +271,41 @@ export default {
 .pdf-card:hover .pdf-overlay { opacity: 1; }
 .pdf-overlay span { color: var(--bg-white); font-family: var(--font-heading); font-weight: 700; font-size: .95rem; }
 
-/* ── Countdown ── */
-.countdown { padding: 70px 0; text-align: center; background: var(--bg-subtle); }
-.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
-.time-box { background: var(--bg-white); padding: 1.5rem 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
-.time-box strong { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--red); display: block; line-height: 1; }
-.time-box span   { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem; display: block; }
+/* ── Parcours ── */
+.parcours-section { padding: 80px 0; background: var(--bg-subtle); }
+.parcours-section .left-heading { margin-bottom: 0.6rem; }
+.parcours-section .section-lead { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; max-width: 640px; margin: 0 0 2rem; }
+
+.parcours-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.parcours-map-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-map);
+  border: 1px solid var(--border);
+}
+.parcours-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.parcours-caption {
+  background: var(--bg-white);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.parcours-video-wrapper { display: flex; flex-direction: column; }
 
 /* ── En-têtes de section ── */
 .section-tag {
@@ -335,12 +354,24 @@ export default {
 .btn-youtube:hover  { background: #cc0000; }
 .btn-youtube:active { transform: scale(.98); }
 
+/* Badge vidéo mise en avant */
+.video-featured-badge {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill) var(--radius-pill) 0 0;
+}
+
 /* Ratio 16:9 responsive */
 .youtube-player {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
-  border-radius: var(--radius-lg);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-map);
 }
@@ -352,36 +383,68 @@ export default {
   border: none;
 }
 
-/* ── HelloAsso ── */
-.helloasso-section { padding: 80px 0; background: var(--bg-subtle); }
+/* Mosaïque */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+.video-thumb {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: block;
+  aspect-ratio: 16/9;
+}
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s;
+}
+.video-thumb:hover img { transform: scale(1.04); }
+.video-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.video-thumb:hover .video-thumb-overlay { opacity: 1; }
+.video-thumb-overlay span {
+  font-size: 2rem;
+  color: white;
+  line-height: 1;
+}
 
-.helloasso-wrapper {
-  max-width: 680px;
-  margin: 0 auto;
+/* Image remerciements sponsors */
+.merci-sponsors {
+  margin-top: 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  background: var(--bg-white);
-  border: 1px solid var(--border);
 }
-.helloasso-wrapper iframe {
-  display: block;
+.merci-sponsors img {
   width: 100%;
-  height: 750px;
-  border: none;
-  transition: height .3s ease;
+  height: auto;
+  display: block;
 }
+
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .story-grid,
   .partners-grid  { grid-template-columns: 1fr; }
-  .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+  .parcours-duo   { grid-template-columns: 1fr; }
   .hero-defi      { height: 360px; }
   .story-heading  { text-align: center; }
   .section-header { flex-direction: column; align-items: flex-start; }
-}
-@media (max-width: 500px) {
-  .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-grid     { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
