@@ -36,6 +36,10 @@
   --tag-red-bg:   #ffe4e6;
   --tag-red-text: #be123c;
 
+  /* Couleurs de statut (étapes terminées / en cours) */
+  --status-done:     #10b981;
+  --status-progress: #f59e0b;
+
   /* Typographie */
   --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-body:    'DM Sans', system-ui, sans-serif;

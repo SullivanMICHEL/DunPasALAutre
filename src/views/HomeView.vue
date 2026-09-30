@@ -9,8 +9,8 @@
           tous.
         </p>
         <div class="hero-actions">
-          <router-link to="/notre-premier-defi" class="btn btn-primary">
-            Notre premier défi !
+          <router-link to="/defis" class="btn btn-primary">
+            Nos défis !
           </router-link>
           <router-link to="/association" class="btn btn-secondary">
             Decouvrir l'association
@@ -87,18 +87,20 @@
 
         <div class="ev-grid">
 
-          <article class="ev-card">
+          <article class="ev-card ev-card--featured">
             <div class="ev-img-wrap">
-              <img src="/collecte-dons.jpg" alt="Récolte de dons humanitaires" class="ev-img">
-              <span class="ev-cat-tag ev-cat-tag--caritatif">Caritatif</span>
+              <img src="/foullee-jonage-2026.jpg" alt="Affiche des Foulées de Jonage, courses solidaires du 11 octobre" class="ev-img">
+              <span class="ev-ribbon">À venir</span>
+              <span class="ev-cat-tag ev-cat-tag--sport">Sport</span>
             </div>
             <div class="ev-body">
-              <h3 class="ev-title">Récolte de dons humanitaires</h3>
+              <div class="ev-date">11 octobre 2026</div>
+              <h3 class="ev-title">Les Foulées de Jonage — 5 km avec Maëva</h3>
               <p class="ev-location">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Garage DG Automobiles & NORISKO, Meyzieu
+                Jonage
               </p>
-              <p class="ev-desc">Collecte de fournitures scolaires, vêtements et matériel médical destinés aux trois écoles marocaines visitées lors du rallye.</p>
+              <p class="ev-desc">Première course de Maëva avec sa prothèse, entourée de l'équipe et de volontaires, au profit du Centre Léon Bérard et d'Imagine for Margo.</p>
             </div>
           </article>
 
