@@ -30,7 +30,7 @@ const routes = [
     path: "/defis/marathon",
     name: "defi-marathon",
     component: () => import("../views/MarathonView.vue"),
-    meta: { title: "Marathon de Paris 2027" },
+    meta: { title: "Marathon 2027" },
   },
   // Redirection de l'ancienne URL pour ne pas casser les liens existants
   {
