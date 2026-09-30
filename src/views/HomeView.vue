@@ -9,8 +9,8 @@
           tous.
         </p>
         <div class="hero-actions">
-          <router-link to="/notre-premier-defi" class="btn btn-primary">
-            Notre premier défi !
+          <router-link to="/defis" class="btn btn-primary">
+            Nos défis !
           </router-link>
           <router-link to="/association" class="btn btn-secondary">
             Decouvrir l'association

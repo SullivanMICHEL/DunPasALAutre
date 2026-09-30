@@ -30,14 +30,63 @@
         <nav class="menu" :class="{ 'menu--open': menuOpen }">
           <router-link to="/" @click="menuOpen = false">Accueil</router-link>
           <router-link to="/evenements" @click="menuOpen = false">Évènements</router-link>
-          <router-link to="/notre-premier-defi" @click="menuOpen = false" class="nav-link-defi">            
-            Notre premier défi
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z"/>
-              <circle cx="7.5" cy="14.5" r="1.5"/>
-              <circle cx="16.5" cy="14.5" r="1.5"/>
-            </svg>
-          </router-link>
+
+          <!-- Dropdown Nos défis -->
+          <div
+            class="nav-dropdown"
+            @mouseenter="defisOpen = true"
+            @mouseleave="defisOpen = false"
+          >
+            <router-link
+              to="/defis"
+              class="nav-link-defis"
+              @click="menuOpen = false"
+            >
+              Nos défis
+              <span class="chevron" :class="{ open: defisOpen }">▾</span>
+            </router-link>
+
+            <!-- Desktop dropdown -->
+            <ul class="dropdown-menu" v-show="defisOpen">
+              <li>
+                <router-link
+                  to="/defis/205-trophee"
+                  class="dropdown-item"
+                  @click="defisOpen = false; menuOpen = false"
+                >
+                  🚗 205 Trophée 2026
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/defis/marathon"
+                  class="dropdown-item"
+                  @click="defisOpen = false; menuOpen = false"
+                >
+                  🏃‍♀️ Marathon 2027
+                </router-link>
+              </li>
+            </ul>
+
+            <!-- Mobile : sous-liens toujours visibles dans le menu burger -->
+            <div class="dropdown-mobile">
+              <router-link
+                to="/defis/205-trophee"
+                class="dropdown-mobile-item"
+                @click="menuOpen = false"
+              >
+                🚗 205 Trophée 2026
+              </router-link>
+              <router-link
+                to="/defis/marathon"
+                class="dropdown-mobile-item"
+                @click="menuOpen = false"
+              >
+                🏃‍♀️ Marathon de Paris 2027
+              </router-link>
+            </div>
+          </div>
+
           <router-link to="/association" @click="menuOpen = false">L'association</router-link>
           <router-link to="/sponsors" @click="menuOpen = false">Sponsors</router-link>
           <router-link to="/nous-aider" @click="menuOpen = false">Nous aider</router-link>
@@ -65,17 +114,77 @@ export default {
   data() {
     return {
       menuOpen: false,
+      defisOpen: false,
     };
   },
 };
 </script>
 
 <style scoped>
-/* ── Icône nav défi ── */
-.nav-link-defi {
+/* ── Dropdown Nos défis (desktop) ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-link-defis {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.chevron {
+  font-size: 0.72rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  line-height: 1;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 18px 0 8px; /* 18px en haut = pont invisible entre le lien et le menu */
+  min-width: 220px;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+  animation: fadeInDown 0.15s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+  color: #6366f1;
+}
+
+/* Mobile : masquer le dropdown desktop, afficher les sous-liens intégrés */
+.dropdown-mobile {
+  display: none;
 }
 
 /* ── Bouton hamburger ── */
@@ -136,15 +245,47 @@ export default {
     display: flex;
   }
 
-  .menu a {
+  .menu a,
+  .menu .nav-link-defis {
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
     border-bottom: 1px solid #f1f5f9;
     color: #334155;
   }
 
+  /* Sur mobile, masquer le dropdown desktop et montrer les sous-liens */
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .dropdown-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-mobile-item {
+    padding: 0.7rem 1.5rem 0.7rem 2.5rem;
+    font-size: 0.92rem;
+    color: #4b5563;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f5f9;
+    background: #f8fafc;
+  }
+
+  .dropdown-mobile-item:last-child {
+    border-bottom: 1px solid #f1f5f9;
+  }
+
   .menu a:last-child {
     border-bottom: none;
+  }
+
+  .nav-dropdown {
+    display: contents;
+  }
+
+  .chevron {
+    display: none;
   }
 }
 </style>

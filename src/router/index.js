@@ -15,10 +15,27 @@ const routes = [
     meta: { title: "Évènements" },
   },
   {
-    path: "/notre-premier-defi",
-    name: "premier-defi",
+    path: "/defis",
+    name: "defis",
+    component: () => import("../views/DefisView.vue"),
+    meta: { title: "Nos défis" },
+  },
+  {
+    path: "/defis/205-trophee",
+    name: "defi-205-trophee",
     component: () => import("../views/PremierDefiView.vue"),
-    meta: { title: "Notre premier défi" },
+    meta: { title: "205 Trophée 2026" },
+  },
+  {
+    path: "/defis/marathon",
+    name: "defi-marathon",
+    component: () => import("../views/MarathonView.vue"),
+    meta: { title: "Marathon de Paris 2027" },
+  },
+  // Redirection de l'ancienne URL pour ne pas casser les liens existants
+  {
+    path: "/notre-premier-defi",
+    redirect: "/defis/205-trophee",
   },
   {
     path: "/association",
