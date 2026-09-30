@@ -82,7 +82,7 @@
                 class="dropdown-mobile-item"
                 @click="menuOpen = false"
               >
-                🏃‍♀️ Marathon de Paris 2027
+                🏃‍♀️ Marathon 2027
               </router-link>
             </div>
           </div>

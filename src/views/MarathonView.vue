@@ -18,7 +18,7 @@
     <section class="marathon-steps-section">
       <h2>Les étapes du défi</h2>
       <p class="steps-intro">
-        Voici le chemin que Maëva est en train de tracer, une étape à la fois.
+        Voici le chemin que Maëva est en train de tracer, un pas après l'autre.
       </p>
 
       <div class="steps-timeline">
