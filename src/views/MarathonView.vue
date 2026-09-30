@@ -192,11 +192,13 @@ const maranelloEventUrl =
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #3b3b6e 100%);
-  border-radius: 20px;
+  background:
+    linear-gradient(120deg, rgba(8,29,88,.95), rgba(13,44,128,.8)),
+    radial-gradient(circle at 80% 40%, rgba(233,52,69,.3), transparent 45%);
+  border-radius: var(--radius-xl);
   padding: 48px 40px;
   margin-bottom: 64px;
-  color: #fff;
+  color: var(--bg-white);
 }
 
 .marathon-hero-content {
@@ -205,23 +207,24 @@ const maranelloEventUrl =
 
 .marathon-tag {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fde68a;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fecdd3;
+  font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   padding: 4px 12px;
-  border-radius: 99px;
+  border-radius: var(--radius-pill);
   margin-bottom: 16px;
 }
 
 .marathon-hero h1 {
   font-size: 2.4rem;
-  font-weight: 800;
   margin-bottom: 16px;
   line-height: 1.2;
-  color: #fff;
+  color: var(--bg-white);
 }
 
 .marathon-lead {
@@ -242,15 +245,14 @@ const maranelloEventUrl =
 }
 
 .marathon-steps-section h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  color: var(--blue-dark);
   margin-bottom: 10px;
 }
 
 .steps-intro {
-  color: #4b5563;
+  color: var(--text-muted);
   font-size: 1rem;
+  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -266,10 +268,12 @@ const maranelloEventUrl =
   gap: 20px;
   align-items: flex-start;
   padding: 20px 24px;
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   width: 100%;
-  background: #f9fafb;
-  border-left: 4px solid transparent;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  box-shadow: var(--shadow-card);
   transition: transform 0.2s ease;
 }
 
@@ -277,30 +281,13 @@ const maranelloEventUrl =
   transform: translateX(4px);
 }
 
-.step.done {
-  border-left-color: #10b981;
-  background: #f0fdf4;
-}
-
-.step.in-progress {
-  border-left-color: #f59e0b;
-  background: #fffbeb;
-}
-
-.step.upcoming {
-  border-left-color: #6366f1;
-  background: #eef2ff;
-}
+.step.done        { border-left-color: var(--status-done); }
+.step.in-progress { border-left-color: var(--status-progress); }
+.step.upcoming    { border-left-color: var(--blue); }
+.step.goal        { border-left-color: var(--red); }
 
 .step.future {
-  border-left-color: #d1d5db;
-  background: #f9fafb;
   opacity: 0.75;
-}
-
-.step.goal {
-  border-left-color: #ef4444;
-  background: #fff5f5;
 }
 
 .step-icon {
@@ -312,9 +299,8 @@ const maranelloEventUrl =
 
 .step-content h3 {
   font-size: 1.1rem;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 6px;
+  color: var(--blue-dark);
+  margin: 0 0 6px;
 }
 
 .step-content {
@@ -326,52 +312,53 @@ const maranelloEventUrl =
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 30%; /* recadre sur Maëva, sans le bitume */
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-card);
 }
 
 .step-content p {
   font-size: 0.93rem;
-  color: #4b5563;
+  color: var(--text-soft);
   line-height: 1.65;
   margin: 0;
 }
 
 .step-event {
   margin-top: 10px;
-  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
   font-weight: 600;
-  color: #6b7280;
-  background: rgba(0, 0, 0, 0.05);
+  color: var(--blue);
+  background: var(--icon-blue-bg);
   display: inline-block;
   padding: 4px 12px;
-  border-radius: 99px;
+  border-radius: var(--radius-pill);
 }
 
 .step-event-link {
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.15s, color 0.15s;
 }
 
 .step-event-link:hover {
-  background: rgba(0, 0, 0, 0.1);
-  color: #1a1a2e;
+  background: var(--blue);
+  color: var(--bg-white);
 }
 
 .step-banner {
   display: block;
   max-width: 440px;
   margin-top: 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-card);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .step-banner:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-map);
 }
 
 .step-banner img {
@@ -392,16 +379,17 @@ const maranelloEventUrl =
 .photo-credit {
   margin-top: 6px;
   font-size: 0.72rem;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .photo-credit a {
   color: inherit;
+  text-decoration: underline;
 }
 
 .goal-event {
-  color: #b91c1c;
-  background: #fee2e2;
+  color: var(--tag-red-text);
+  background: var(--tag-red-bg);
 }
 
 /* ── Connecteurs ── */
@@ -412,35 +400,35 @@ const maranelloEventUrl =
   border-radius: 2px;
 }
 
-.done-line     { background: #10b981; }
-.ongoing-line  { background: #f59e0b; }
+.done-line     { background: var(--status-done); }
+.ongoing-line  { background: var(--status-progress); }
 .dashed-line {
   background: repeating-linear-gradient(
     to bottom,
-    #d1d5db 0px,
-    #d1d5db 6px,
+    var(--text-muted) 0px,
+    var(--text-muted) 6px,
     transparent 6px,
     transparent 12px
   );
+  opacity: 0.4;
 }
 
 /* ── Section soutien ── */
 .marathon-support {
   text-align: center;
-  background: #f3f4f6;
-  border-radius: 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
   padding: 48px 32px;
 }
 
 .marathon-support h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  color: var(--blue-dark);
   margin-bottom: 12px;
 }
 
 .marathon-support p {
-  color: #4b5563;
+  color: var(--text-soft);
   font-size: 1rem;
   max-width: 500px;
   margin: 0 auto 24px;

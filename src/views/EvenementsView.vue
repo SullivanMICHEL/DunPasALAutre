@@ -33,64 +33,72 @@
       </div>
     </section>
 
-    <!-- ── Card HERO départ + rallye (toujours visible si filtre "tous" ou "sport") ── -->
+    <!-- ── Card HERO défi Marathon 2027 (toujours visible si filtre "tous" ou "sport") ── -->
     <section
       v-if="activeFilter === 'all' || activeFilter === 'sport'"
       class="hero-event-section"
     >
       <div class="container">
         <div class="section-divider">
-          <span class="divider-pill divider-pill--upcoming">L'événement phare</span>
+          <span class="divider-pill divider-pill--upcoming">Le défi en cours</span>
         </div>
 
         <div class="hero-event-card">
           <div class="hero-event-img">
-            <img src="/Les205.jpeg" alt="Rallye 205 Trophée — Départ et raid au Maroc">
+            <img
+              src="/mae-prothese.jpg"
+              alt="Maëva debout avec sa prothèse de jambe"
+              class="hero-event-img--portrait"
+            >
             <div class="hero-event-img-overlay"></div>
           </div>
 
           <div class="hero-event-body">
             <div class="hero-event-meta">
               <span class="ev-cat-tag ev-cat-tag--sport ev-cat-tag--inline">Sport</span>
-              <span class="ev-ribbon-inline">À venir</span>
+              <span class="ev-ribbon-inline">Prochaine étape</span>
             </div>
 
-            <h2 class="hero-event-title">Départ pour le 205 Trophée — Maroc</h2>
+            <h2 class="hero-event-title">Objectif Marathon 2027</h2>
 
             <div class="hero-event-dates">
               <div class="date-milestone">
-                <div class="date-milestone-label">Départ depuis Jonage</div>
-                <div class="date-milestone-value">30 avril 2026</div>
+                <div class="date-milestone-label">Foulées de Jonage · 5 km</div>
+                <div class="date-milestone-value">11 octobre 2026</div>
               </div>
               <div class="date-milestone-arrow">→</div>
               <div class="date-milestone">
-                <div class="date-milestone-label">Départ Tanger</div>
-                <div class="date-milestone-value">3 mai 2026</div>
+                <div class="date-milestone-label">Semi de Maranello · 21 km</div>
+                <div class="date-milestone-value">Mars 2027</div>
               </div>
               <div class="date-milestone-arrow">→</div>
               <div class="date-milestone">
-                <div class="date-milestone-label">Arrivée Essaouira</div>
-                <div class="date-milestone-value">13 mai 2026</div>
+                <div class="date-milestone-label">Marathon · 42 km</div>
+                <div class="date-milestone-value">2027</div>
               </div>
             </div>
 
             <p class="hero-event-desc">
-              Le moment pour lequel tout a été construit. 4 équipages de l'association
-              prennent la route depuis l'école primaire de Jonage direction Tanger, avant de s'élancer
-              pour 9 jours de raid humanitaire et solidaire à travers le désert marocain —
-              3 000 km entre dunes, pistes sableuses et étapes humanitaires.
+              Après le Maroc, Maëva se lance un nouveau défi : courir un marathon en 2027 avec sa prothèse.
+              Première étape : les 5 km des Foulées de Jonage, où l'équipe de l'association et des
+              volontaires courront à ses côtés, au profit du Centre Léon Bérard et
+              d'Imagine for Margo — Children Without Cancer.
             </p>
 
             <div class="hero-event-stats">
-              <div class="hero-stat"><strong>3 000 km</strong><span>de parcours</span></div>
-              <div class="hero-stat"><strong>9 jours</strong><span>de raid</span></div>
-              <div class="hero-stat"><strong>4</strong><span>équipages</span></div>
-              <div class="hero-stat"><strong>3 écoles</strong><span>soutenues</span></div>
+              <div class="hero-stat"><strong>5 km</strong><span>Jonage</span></div>
+              <div class="hero-stat"><strong>21 km</strong><span>Maranello</span></div>
+              <div class="hero-stat"><strong>42 km</strong><span>Marathon</span></div>
+              <div class="hero-stat"><strong>2</strong><span>causes soutenues</span></div>
             </div>
 
+            <router-link to="/defis/marathon" class="btn btn-primary hero-event-cta">
+              Découvrir le défi →
+            </router-link>
+
             <!-- Compte à rebours -->
-            <div class="countdown-mini">
-              <div class="countdown-mini-label">Départ dans</div>
+            <div v-if="countdownActive" class="countdown-mini">
+              <div class="countdown-mini-label">Foulées de Jonage dans</div>
               <div class="countdown-mini-boxes">
                 <div class="cbox"><strong>{{ timeLeft.days }}</strong><span>j</span></div>
                 <div class="cbox"><strong>{{ timeLeft.hours }}</strong><span>h</span></div>
@@ -203,8 +211,9 @@ export default {
     return {
       activeFilter: "all",
       timer: null,
-      departDate: new Date("2026-04-30T00:00:00"),
+      departDate: new Date("2026-10-11T09:45:00"), // départ du 5 km des Foulées de Jonage
       timeLeft: { days: 0, hours: 0, minutes: 0, seconds: 0 },
+      countdownActive: true,
 
       filters: [
         { key: "all",             label: "Tous" },
@@ -215,6 +224,46 @@ export default {
       ],
 
       events: [
+        {
+          id: 14,
+          endDate: "2026-10-11",
+          category: "sport",
+          title: "Les Foulées de Jonage — 5 km avec Maëva",
+          date: "11 octobre 2026 — départ 9h45",
+          location: "Jonage",
+          description: "Première course de Maëva avec sa prothèse, entourée de l'équipe et de volontaires. Des courses solidaires au profit du Centre Léon Bérard et d'Imagine for Margo — venez courir ou encourager !",
+          image: "/foullee-jonage-2026.jpg",
+        },
+        {
+          id: 15,
+          endDate: "2027-03-14",
+          category: "sport",
+          title: "Semi-marathon de Maranello",
+          date: "12 au 14 mars 2027",
+          location: "Maranello, Italie",
+          description: "21 km sur les terres de Ferrari : la grande répétition de Maëva avant le marathon, avec sa lame de course.",
+          image: null,
+        },
+        {
+          id: 16,
+          endDate: "2027-12-31",
+          category: "sport",
+          title: "Le Marathon 2027",
+          date: "2027 — date à confirmer",
+          location: "Paris ou Lyon (à confirmer)",
+          description: "L'objectif final : 42,195 km avec sa prothèse. La ligne d'arrivée de tout un défi, et de tous ceux qui l'ont soutenu.",
+          image: null,
+        },
+        {
+          id: 11,
+          endDate: "2026-05-13",
+          category: "sport",
+          title: "205 Trophée — raid solidaire au Maroc",
+          date: "30 avril → 13 mai 2026",
+          location: "Jonage → Tanger → Essaouira",
+          description: "Le premier défi de l'association : 4 équipages, 3 000 km et 9 jours de raid humanitaire à travers le Maroc, avec des dons remis à 3 écoles.",
+          image: "/Les205.jpeg",
+        },
         {
           id: 8,
           endDate: "2026-04-29",
@@ -240,22 +289,11 @@ export default {
           endDate: "2026-05-31",
           category: "sensibilisation",
           title: "Retour du Rallye",
-          date: "Date à confirmer — mai 2026",
+          date: "29 juin 2026",
           location: "Meyzieu",
           description: "Soirée de retour pour raconter l'aventure, présenter les collectes réalisées et remercier tous ceux qui ont rendu ce projet possible. Et surtout commencer a évoquer les futurs projets de D'un Pas a l'autre.",
           image: null,
         },
-        {
-          id: 13,
-          endDate: "2026-06-29",
-          category: "sport",
-          title: "Événement Paratennis — équipe de Meyzieu",
-          date: "29 juin 2026 (a confirmer)",
-          location: "Meyzieu",
-          description: "Nouveau temps fort autour du paratennis.",
-          image: null,
-        },
-
         {
           id: 7,
           endDate: "2026-03-26",
@@ -340,14 +378,17 @@ export default {
       if (this.activeFilter === 'all') return this.events;
       return this.events.filter(e => e.category === this.activeFilter);
     },
+    // À venir : du plus proche au plus lointain
     upcomingFiltered() {
-      return this.filteredAll.filter(e => new Date(e.endDate) >= this.today);
+      return this.filteredAll
+        .filter(e => new Date(e.endDate) >= this.today)
+        .sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
     },
+    // Passés : du plus récent au plus ancien
     pastFiltered() {
-      return this.filteredAll.filter(e => new Date(e.endDate) < this.today);
-    },
-    isRallyeUpcoming() {
-      return new Date('2026-05-13') >= this.today;
+      return this.filteredAll
+        .filter(e => new Date(e.endDate) < this.today)
+        .sort((a, b) => new Date(b.endDate) - new Date(a.endDate));
     },
   },
 
@@ -365,6 +406,7 @@ export default {
       const diff = this.departDate - new Date();
       if (diff <= 0) {
         this.timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+        this.countdownActive = false; // course passée : on masque le compte à rebours
         clearInterval(this.timer);
         return;
       }
@@ -464,6 +506,10 @@ export default {
   width: 100%; height: 100%;
   object-fit: cover; display: block;
 }
+.hero-event-img img.hero-event-img--portrait {
+  position: absolute; inset: 0;
+  object-position: center 25%; /* cadre sur Maëva */
+}
 .hero-event-img-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to right, transparent 60%, rgba(8,29,88,.15));
@@ -520,6 +566,8 @@ export default {
   font-size: 1.1rem; font-weight: 800; color: var(--red);
 }
 .hero-stat span { font-size: 0.72rem; color: var(--text-muted); }
+
+.hero-event-cta { align-self: flex-start; }
 
 /* Compte à rebours mini */
 .countdown-mini {
